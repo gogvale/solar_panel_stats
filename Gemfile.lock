@@ -95,6 +95,8 @@ GEM
       thor (>= 0.14.0, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    groupdate (6.1.0)
+      activesupport (>= 5.2)
     httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -234,6 +236,7 @@ DEPENDENCIES
   chartkick (~> 4.1)
   debug
   figaro (~> 1.2)
+  groupdate (~> 6.1)
   httparty (~> 0.20.0)
   importmap-rails
   jbuilder

@@ -77,3 +77,5 @@ gem "figaro", "~> 1.2"
 gem "whenever", "~> 1.0"
 
 gem "chartkick", "~> 4.1"
+
+gem "groupdate", "~> 6.1"
