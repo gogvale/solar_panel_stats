@@ -10,5 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_28_005946) do
+  create_table "measurements", force: :cascade do |t|
+    t.float "current_power"
+    t.float "yield_today"
+    t.float "total_yield"
+    t.string "alert"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
