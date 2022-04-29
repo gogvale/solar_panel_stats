@@ -7,20 +7,18 @@ class Measurement < ApplicationRecord
   private
 
   def adjust_created
-    offset = time_difference.hours
-    created_at -= offset
-    updated_at -= offset
+    created_at = time_difference
+    updated_at = time_difference
   end
 
   def adjust_saved
-    offset = time_difference.hours
-    updated_at -= offset
+    updated_at = time_difference
   end
 
   def time_difference
     time1 = Time.zone.now.in_time_zone('UTC')
     time2 = Time.zone.now.in_time_zone('Monterrey')
     time_difference_in_seconds = time2.utc_offset - time1.utc_offset
-    (time_difference_in_seconds / 60 / 60).abs
+    time2 - (time_difference_in_seconds / 60 / 60).abs.hours
   end
 end
