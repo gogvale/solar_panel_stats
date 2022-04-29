@@ -1,7 +1,7 @@
 class MeasurementsController < ApplicationController
   def dashboard
     @todays_measure = Measurement.where(created_at: 1.day.ago..nil)
-                                 .group_by_hour(:created_at, format: "%l%P")
+                                 .group_by_minute(:created_at, format: "%l%P")
                                  .sum(:current_power)
     @weekly_measure = Measurement.where(created_at: 1.week.ago..nil)
                                  .group_by_day_of_week(:created_at, format: "%a")
