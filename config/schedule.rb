@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 30.minutes do
-  runner "GetPowerGenerationJob.perform_now"
+every 1.minute do
+  runner "GetPowerGenerationJob.perform_now", environment: :development
 end
