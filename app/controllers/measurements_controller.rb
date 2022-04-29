@@ -8,7 +8,7 @@ class MeasurementsController < ApplicationController
     @weekly_measure = Measurement.where(created_at: 1.week.ago..nil)
                                  .group_by_day_of_week(:created_at, format: '%a')
                                  .maximum(:created_at)
-                                 .map { |key, i| { key => Measurement.find_by(created_at: i)&.yield_today } }
+                                 .map { |key, i| { key => Measurement.find_by(created_at: i)&.yield_today || 0 } }
                                  .reduce({}, :merge)
     @yearly_measure = (0..12).to_a.reverse.map do |j|
       time = j.months.ago
